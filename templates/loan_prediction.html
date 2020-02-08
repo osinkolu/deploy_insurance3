@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>INSURANCE PREDICTION</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('check_status')}}"method="post">
+    	<input type="text" name="YearOfObservation" placeholder="YearOfObservation	" required="required" />
+        <input type="text" name="Insured_Period" placeholder="Insured_Period" required="required" />
+		<input type="text" name="Residential" placeholder="Residential" required="required" />
+		<input type="text" name="Building_Painted" placeholder="Building_Painted" required="required" />
+		<input type="text" name="Building_Fenced" placeholder="Building_Fenced" required="required" />
+		<input type="text" name="Garden" placeholder="Garden" required="required" />
+		<input type="text" name="Settlement" placeholder="Settlement" required="required" />
+		<input type="text" name="Building_Dimension" placeholder="Building_Dimension" required="required" />
+		<input type="text" name="Building_Type" placeholder="Building_Type" required="required" />
+		<input type="text" name="Date_of_Occupancy" placeholder="Date_of_Occupancy" required="required" />
+		<input type="text" name="Geo_Code" placeholder="Geo_Code" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">check_status</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
